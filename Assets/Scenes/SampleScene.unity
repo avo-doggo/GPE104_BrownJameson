@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 704531411}
   - component: {fileID: 704531413}
   m_Layer: 0
-  m_Name: StarShipSprite
+  m_Name: StarShipPawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,16 +357,74 @@ MonoBehaviour:
   m_GameObject: {fileID: 704531410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cfcf50537b403342b85ddaf0ce24e89, type: 3}
+  m_Script: {fileID: 11500000, guid: b43e222ef961b814e83f7d10310efce0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Teleport
-  teleportKey: 116
-  quitKey: 27
+  m_EditorClassIdentifier: Assembly-CSharp::StarshipPawn
   minX: -3
   maxX: 3
   minY: -3
   maxY: 3
   tf: {fileID: 0}
+  normalSpeed: 5
+  turboSpeed: 10
+  normalRotateSpeed: 360
+  turboRotateSpeed: 720
+--- !u!1 &2137528973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2137528974}
+  - component: {fileID: 2137528975}
+  m_Layer: 0
+  m_Name: StarShipController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2137528974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137528973}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2137528975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137528973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56316fc62d29d4f4cab24d121c1f9dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  pawn: {fileID: 704531413}
+  teleportKey: 116
+  moveForwardLocal: 119
+  moveBackwardLocal: 115
+  rotateClockwise: 100
+  rotateCounterClockwise: 97
+  moveForwardWorld: 273
+  moveBackwardWorld: 274
+  moveRightWorld: 275
+  moveLeftWorld: 276
+  turboOption1: 304
+  turboOption2: 303
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -374,3 +432,4 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 518335603}
   - {fileID: 704531412}
+  - {fileID: 2137528974}
