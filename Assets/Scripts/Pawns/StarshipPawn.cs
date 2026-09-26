@@ -53,7 +53,7 @@ public class StarshipPawn : Pawn
 
     public override void MoveRightWorld()
     {
-        tf.position = tf.position + Vector3.right;
+        tf.position = tf.position +   Vector3.right;
     }
 
     public override void RotateClockwise()
@@ -89,7 +89,7 @@ public class StarshipPawn : Pawn
     }
     public override void Update()
     {
-        throw new System.NotImplementedException();
+       
     }
 
 }
