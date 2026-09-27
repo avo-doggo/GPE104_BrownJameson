@@ -26,6 +26,8 @@ public class PlayerController : Controller
 
     public KeyCode turboOption2; //right Shift
 
+    public KeyCode shootKey;
+
     public override void MakeDecisions()
     {
         if (pawn != null)
@@ -93,13 +95,20 @@ public class PlayerController : Controller
             {
                 pawn.Teleport();
             }
+            if (Input.GetKeyDown(shootKey))
+            {
+                pawn.Shoot();
+            }
         }
     }
 
  
     public override void Start()
     {
-    
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.playerController = this;
+        }
     }
 
    
