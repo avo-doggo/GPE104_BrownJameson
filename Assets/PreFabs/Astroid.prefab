@@ -85,7 +85,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -925345978958199149, guid: 0bf06c3f81517a940adb2b461dc21059, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -244,3 +244,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26bfca588aa67e46837c57ac0db6c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathDestroyManager
+  scoreValue: 10

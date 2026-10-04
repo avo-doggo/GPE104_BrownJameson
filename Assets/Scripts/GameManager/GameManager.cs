@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,6 +11,10 @@ public class GameManager : MonoBehaviour
     public PlayerController playerController;
 
     public List<Obstacle> obstacleList;
+
+    public int score;
+
+    public TMP_Text text;
 
     public void Awake()
     { // singleton pattern- this ensures there is onl y one instance of this code
@@ -36,7 +41,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (obstacleList != null)
+   /*     if (obstacleList != null)
         {
             if (obstacleList.Count <= 0 && playerController != null)
             {
@@ -44,9 +49,11 @@ public class GameManager : MonoBehaviour
                 {
                     Debug.Log("Victory!");
                 }
-            }
-            
-           
+            }*/
+        if (score == 100)
+        {
+            Debug.Log("You Win!");
+
         }
         if (playerController != null)
             {
@@ -55,5 +62,9 @@ public class GameManager : MonoBehaviour
                     Debug.Log("You Lose!");
                 }
             }
+        if (text != null)
+        {
+            text.text = "" + score;
+        }
     }
 }
