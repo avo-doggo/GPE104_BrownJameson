@@ -43,7 +43,7 @@ public class Damager : MonoBehaviour
             {
                 otherHealthComponent.TakeDamage(damageAmount);
             }
-            Destroy(gameObject);
+
         }
     }
 }

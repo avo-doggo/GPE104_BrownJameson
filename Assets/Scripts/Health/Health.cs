@@ -16,7 +16,8 @@ public class Health : MonoBehaviour
     public Image healthBar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
+    {        
+
         death = GetComponent<Death>(); 
         if (healthBar != null)
         {
@@ -44,8 +45,9 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
-
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        AudioSource.PlayClipAtPoint(GameManager.instance.damageSound, transform.position, GameManager.instance.SFXVolume);
+    
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         if (healthBar != null)
         {
