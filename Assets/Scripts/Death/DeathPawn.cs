@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class DeathPawn : Death
 {
-
     private Controller controller;
+
     public override void Die()
     {
-        if (controller != null) 
+        // Tell the LevelManager that the player lost a life
+        if (LevelManager.instance != null)
         {
-            controller.pawn = null;
+            LevelManager.instance.LoseLife();
         }
-
-        Destroy(gameObject);
     }
 
     public override void Start()

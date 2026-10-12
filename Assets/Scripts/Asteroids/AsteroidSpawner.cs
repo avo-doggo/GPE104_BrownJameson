@@ -5,9 +5,9 @@ using UnityEngine;
 public class AsteroidSpawner : Spawner
 {
 
-    public Transform asteroidSpawnPoint;
+    public Transform healSpawnPoint;
 
-    public GameObject asteroidPrefab;
+    public GameObject healPrefab;
 
     public float spawnInterval;
 
@@ -35,7 +35,7 @@ public class AsteroidSpawner : Spawner
             float randomX = Random.Range(minX, maxX);
             Vector3 spawnPosition = new Vector3(randomX, fixedY, 0f);
 
-            Instantiate(asteroidPrefab, spawnPosition, Quaternion.identity);
+            Instantiate(healPrefab, spawnPosition, Quaternion.identity);
 
             yield return new WaitForSeconds(spawnInterval);
         }

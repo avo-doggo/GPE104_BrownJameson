@@ -267,5 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44d723435537fd41992a96e6705a4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Heal
-  healAmount: 10
+  healAmount: 20
   isFullHeal: 1
+  force: 50
+  lifetime: 15

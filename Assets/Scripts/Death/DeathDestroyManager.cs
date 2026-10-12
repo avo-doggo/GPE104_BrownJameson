@@ -8,17 +8,28 @@ public class DeathDestroyManager : Death
 
     public override void Die()
     {
-        if (GameManager.instance != null)
+        // Check if this object is an asteroid.
+        Asteroids asteroid = GetComponent<Asteroids>();
+
+        if (asteroid != null)
         {
-            if (GameManager.instance.obstacleList != null &&
-                obstacleToRemoveOnDeath != null)
-            {
-                GameManager.instance.obstacleList.Remove(obstacleToRemoveOnDeath);
-            }
+            // Create the smaller asteroids before destroying this one.
+            asteroid.SplitAsteroid();
+        }
 
-            GameManager.instance.score += scoreValue;
+        // Remove the asteroid/enemy from the obstacle list.
+        if (LevelManager.instance != null &&
+            obstacleToRemoveOnDeath != null)
+        {
+            LevelManager.instance.RemoveObstacle(obstacleToRemoveOnDeath);
 
-            // Play destruction sound
+            LevelManager.instance.AddScore(scoreValue);
+        }
+
+        // Play the destruction sound.
+        if (GameManager.instance != null &&
+            GameManager.instance.destructionSound != null)
+        {
             AudioSource.PlayClipAtPoint(
                 GameManager.instance.destructionSound,
                 transform.position,
@@ -26,6 +37,7 @@ public class DeathDestroyManager : Death
             );
         }
 
+        // Destroy the current asteroid.
         Destroy(gameObject);
     }
 

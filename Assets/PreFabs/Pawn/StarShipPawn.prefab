@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShooterBullet
   bulletSpawnPoint: {fileID: 2852107731205815022}
   bulletPrefab: {fileID: 6761988722740936244, guid: 177e0f98eff2aef43906319307b6d308, type: 3}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 4340894855347590322, guid: 177e0f98eff2aef43906319307b6d308, type: 3}
 --- !u!114 &-3945435100423006605
 MonoBehaviour:
   m_ObjectHideFlags: 0

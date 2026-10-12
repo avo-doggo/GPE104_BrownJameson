@@ -78,14 +78,25 @@ public class StarshipPawn : Pawn
         tf.Rotate(0, 0, turboRotateSpeed * Time.deltaTime);
     }
 
-  
+
 
     public override void Teleport()
     {
-        tf.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY));
- 
-    }    
-    
+        if (LevelManager.instance != null)
+        {
+            tf.position = new Vector3(
+                Random.Range(
+                    LevelManager.instance.screenLeft,
+                    LevelManager.instance.screenRight
+                ),
+                Random.Range(
+                    LevelManager.instance.screenBottom,
+                    LevelManager.instance.screenTop
+                )
+            );
+        }
+    }
+
     public override void Shoot()
     {
         if (sh != null)
@@ -104,6 +115,5 @@ public class StarshipPawn : Pawn
     {
        
     }
-
 
 }
