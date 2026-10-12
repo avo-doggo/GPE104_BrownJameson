@@ -7,6 +7,7 @@ using UnityEngine.UI;
 //The Health class encapsulates all the elements required for health management, including current health, maximum health, and methods for healing and taking damage.
 public class Health : MonoBehaviour
 {
+    [Header("Health")]
     public float currentHealth;
 
     public float maxHealth;
@@ -16,12 +17,14 @@ public class Health : MonoBehaviour
     public Image healthBar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {        
+    {
+        death = GetComponent<Death>();
 
-        death = GetComponent<Death>(); 
+        currentHealth = maxHealth;
+
         if (healthBar != null)
         {
-            healthBar.fillAmount = currentHealth / maxHealth;
+            healthBar.fillAmount = 1f;
         }
     }
 
@@ -39,6 +42,16 @@ public class Health : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.fillAmount = currentHealth / maxHealth;
+        }
+    }
+
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = 1f;
         }
     }
 

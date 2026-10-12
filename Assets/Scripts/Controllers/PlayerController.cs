@@ -102,12 +102,31 @@ public class PlayerController : Controller
         }
     }
 
- 
+    public override void Respawn()
+    {
+        if (pawn != null)
+        {
+            // Move the player back to the starting position
+            pawn.transform.position = Vector3.zero;
+
+            // Reset the player's rotation
+            pawn.transform.rotation = Quaternion.identity;
+
+            // Reset player health
+            Health health = pawn.GetComponent<Health>();
+
+            if (health != null)
+            {
+                health.ResetHealth();
+            }
+        }
+    }
+
     public override void Start()
     {
-        if (GameManager.instance != null)
+        if (LevelManager.instance != null)
         {
-            GameManager.instance.playerController = this;
+            LevelManager.instance.playerController = this;
         }
     }
 
@@ -117,4 +136,6 @@ public class PlayerController : Controller
     {
         MakeDecisions();
     }
+
+
 }

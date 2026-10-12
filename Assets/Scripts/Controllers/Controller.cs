@@ -12,5 +12,7 @@ public abstract class Controller : MonoBehaviour
     public abstract void Update();
 
     public abstract void MakeDecisions();
-    
+
+    public abstract void Respawn();
+
 }

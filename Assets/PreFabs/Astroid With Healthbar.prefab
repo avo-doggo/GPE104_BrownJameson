@@ -461,7 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ed15bd69dc9dc459157ef496298b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damager
-  damageAmount: 10
+  damageAmount: 30
   isInstakill: 0
 --- !u!114 &5729377183960959296
 MonoBehaviour:
@@ -475,8 +475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd8b571fbb95d94e8942b4119478aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  currentHealth: 50
-  maxHealth: 50
+  currentHealth: 75
+  maxHealth: 75
   healthBar: {fileID: 2849669347767125692}
 --- !u!114 &7256536245496428237
 MonoBehaviour:
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26bfca588aa67e46837c57ac0db6c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathDestroyManager
-  scoreValue: 10
+  scoreValue: 25
 --- !u!114 &6487137314965480642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,6 +517,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Asteroids
   force: 100
   lifetime: 10
+  smallerAsteroidPrefab: {fileID: 7058945611394437087, guid: 6296692d2b35045449715713d3d4220a, type: 3}
+  numberOfSmallerAsteroids: 2
 --- !u!82 &1551607861809962005
 AudioSource:
   m_ObjectHideFlags: 0
